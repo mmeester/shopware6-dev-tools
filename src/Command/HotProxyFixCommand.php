@@ -32,7 +32,8 @@ class HotProxyFixCommand extends Command
             '============================',
             '',
         ]);
-        copy('custom/plugins/DevTools/src/Resources/proxy-server-hot/index.js', 'vendor/shopware/platform/src/Storefront/Resources/app/storefront/build/proxy-server-hot/index.js');
+
+        copy(dirname(__DIR__) . '/Resources/proxy-server-hot/index.js', 'vendor/shopware/platform/src/Storefront/Resources/app/storefront/build/proxy-server-hot/index.js');
 
         $output->writeln([
             'Done:',
