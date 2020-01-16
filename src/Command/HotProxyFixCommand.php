@@ -36,7 +36,7 @@ class HotProxyFixCommand extends Command
         copy(dirname(__DIR__) . '/Resources/proxy-server-hot/index.js', 'vendor/shopware/platform/src/Storefront/Resources/app/storefront/build/proxy-server-hot/index.js');
 
         $output->writeln([
-            'Done:',
+            'Done...',
             '',
             'Run commands like you always do for development: <info>./psh.phar storefront:hot-proxy</info>'
         ]);
