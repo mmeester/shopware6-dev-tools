@@ -44,9 +44,9 @@ bin/console dev:twig-cache enable
   
 ## Hot proxy fix
 
-This is a fix for Shopware 6 users that aren't able or don't want to use Kubernetes to run their installation locally. 
+This is a fix for Shopware 6 users that aren't able or don't want to use Docker to run their installation locally. 
 
-This solves the problem in Valet+ that Valet+ isn't acception :80 forwarding with hot proxy?
+This solves the problem in Valet+ that it isn't accepting port :80 forwarding with hot proxy!
 
 - Run the new command to fix the hot-proxy: `bin/console dev:hot-proxy-fix`
 - Try the hot-proxy again by running the standard Shopware command: `./psh.phar custom:fix-proxy`
