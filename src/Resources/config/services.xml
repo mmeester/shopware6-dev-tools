@@ -8,5 +8,8 @@
         <service id="DevTools\Command\HotProxyFixCommand">
             <tag name="console.command"/>
         </service>
+        <service id="DevTools\Command\TwigCacheCommand">
+            <tag name="console.command"/>
+        </service>
     </services>
 </container>
