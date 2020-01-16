@@ -1,5 +1,5 @@
 {
-    "name": "mmeester/plugin-dev-tools",
+    "name": "mmeester/shopware6-dev-tools",
     "description": "This plugin makes hot proxy available for manual local installations with tools like MAMP, valet+ and others that don't support port 80",
     "type": "shopware-platform-plugin",
     "license": "MIT",
