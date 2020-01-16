@@ -1,24 +1,24 @@
 {
-    "name": "mmeester/shopware6-dev-tools",
-    "description": "This plugin makes hot proxy available for manual local installations with tools like MAMP, valet+ and others that don't support port 80",
-    "type": "shopware-platform-plugin",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Maurits Meester",
-            "email": "maurits@e-mmer.nl"
-        }
-    ],
-    "extra": {
-        "shopware-plugin-class": "DevTools\\DevTools",
-        "label": {
-            "de-DE": "Dieses Plugin stellt Hot Proxy für manuelle lokale Installationen mit Tools wie MAMP, Valet + und anderen zur Verfügung, die Port 80 nicht unterstützen",
-            "en-GB": "This plugin makes hot proxy available for manual local installations with tools like MAMP, valet+ and others that don't support port 80"
-        }
-    },
-    "autoload": {
-        "psr-4": {
-            "DevTools\\": "src/"
-        }
+  "name": "mmeester/shopware6-dev-tools",
+  "description": "Additional tools to support your Shopware 6 development",
+  "type": "shopware-platform-plugin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Maurits Meester",
+      "email": "maurits@e-mmer.nl"
     }
+  ],
+  "extra": {
+    "shopware-plugin-class": "DevTools\\DevTools",
+    "label": {
+      "de-DE": "Dieses Plugin stellt Hot Proxy für manuelle lokale Installationen mit Tools wie MAMP, Valet + und anderen zur Verfügung, die Port 80 nicht unterstützen",
+      "en-GB": "This plugin makes hot proxy available for manual local installations with tools like MAMP, valet+ and others that don't support port 80"
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "DevTools\\": "src/"
+    }
+  }
 }
