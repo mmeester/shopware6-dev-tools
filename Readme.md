@@ -13,7 +13,7 @@ This plugin is build upon a few assumptions:
 
 ### Composer / packagist
 ```
-composer require mmeester/shopware6-dev-tools
+composer require mmeester/shopware6-dev-tools --dev
 ```
 That's it, follow the next steps in the [activate plugin](#activate-plugin) section.
 
@@ -29,7 +29,9 @@ In your CLI run the following inside the root of your Shopware project:
 - Detect new plugins: `bin/console plugin:refresh`  👉 Look for the new plugin 
 - Install & activate the plugin: ` bin/console plugin:install --activate DevTools`
 
-## Enable or disable Twig Caching
+## Commands
+
+### Enable or disable Twig Caching
 Before you can start developing you need to disable twig caching so development goes faster (and your installation a little slower), to disable the cache run:
 
 ```
@@ -42,7 +44,29 @@ to enable the cache:
 bin/console dev:twig-cache enable
 ```
   
-## Hot proxy fix
+### Add shorthand command to CLI
+Typing `./psh.phar` are way too much characters when typing it more than twice a day 😊, so make your life a little easier and add a shorthand to your cli, run the following command once and follow the instructions in your cli:
+
+```
+bin/console dev:create-alias
+``` 
+
+Now you are able to run all your known Shopware Commands like this:
+
+```
+sw cache
+sw update
+
+sw storefront:build
+sw storefront:dev
+sw storefront:hot-proxy
+
+...
+```
+
+*NOTE:* You only need to run this command once per machine, each time you run this command an additional alias will be written to your profile. 
+  
+### Hot proxy fix
 
 This is a fix for Shopware 6 users that aren't able or don't want to use Docker to run their installation locally. 
 
