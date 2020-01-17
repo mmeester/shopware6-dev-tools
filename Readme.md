@@ -45,13 +45,13 @@ bin/console dev:twig-cache enable
 ```
   
 ### Add shorthand command to CLI
-Typing `./psh.phar` are way too much characters when typing it more than twice a day 😊, so make your life a little easier and add a shorthand to your cli, run the following command once:
+Typing `./psh.phar` are way too much characters when typing it more than twice a day 😊, so make your life a little easier and add a shorthand to your cli, run the following command once and follow the instructions in your cli:
 
 ```
 bin/console dev:create-alias
-```
+``` 
 
-After this run all your known Shopware Commands like this:
+Now your able to run all your known Shopware Commands like this:
 
 ```
 sw cache
