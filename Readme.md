@@ -73,4 +73,4 @@ This is a fix for Shopware 6 users that aren't able or don't want to use Docker 
 This solves the problem in Valet+ that it isn't accepting port :80 forwarding with hot proxy!
 
 - Run the new command to fix the hot-proxy: `bin/console dev:hot-proxy-fix`
-- Try the hot-proxy again by running the standard Shopware command: `./psh.phar custom:fix-proxy`
+- Try the hot-proxy again by running the standard Shopware command: `./psh.phar storefront:hot-proxy`
