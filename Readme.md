@@ -51,7 +51,7 @@ Typing `./psh.phar` are way too much characters when typing it more than twice a
 bin/console dev:create-alias
 ``` 
 
-Now your able to run all your known Shopware Commands like this:
+Now you are able to run all your known Shopware Commands like this:
 
 ```
 sw cache
