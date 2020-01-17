@@ -62,7 +62,9 @@ sw storefront:dev
 sw storefront:hot-proxy
 
 ...
-```  
+```
+
+*NOTE:* You only need to run this command once per machine, each time you run this command an additional alias will be written to your profile. 
   
 ### Hot proxy fix
 
