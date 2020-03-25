@@ -8,6 +8,7 @@
 
 namespace DevTools\Command;
 
+use DevTools\Helper\DetectDirectory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -35,19 +36,21 @@ class HotProxyFixCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln([
-            '',
-            'Copying fix to vendor folder',
-            '============================',
-            '',
-        ]);
 
-        copy(dirname(__DIR__) . '/Resources/proxy-server-hot/index.js', 'vendor/shopware/platform/src/Storefront/Resources/app/storefront/build/proxy-server-hot/index.js');
-
-        $output->writeln([
-            'Done...',
-            '',
-            'Run commands like you always do for development: <info>./psh.phar storefront:hot-proxy</info>'
-        ]);
+        var_dump ( DetectDirectory::detectInstallDirectory() );
+//        $output->writeln([
+//            '',
+//            'Copying fix to vendor folder',
+//            '============================',
+//            '',
+//        ]);
+//
+//        copy(dirname(__DIR__) . '/Resources/proxy-server-hot/index.js', 'vendor/shopware/platform/src/Storefront/Resources/app/storefront/build/proxy-server-hot/index.js');
+//
+//        $output->writeln([
+//            'Done...',
+//            '',
+//            'Run commands like you always do for development: <info>./psh.phar storefront:hot-proxy</info>'
+//        ]);
     }
 }
