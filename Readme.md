@@ -7,7 +7,7 @@ A small stack of dev tools to make your life as a starting Shopware 6 developer 
 This plugin is build upon a few assumptions:
 
 - You have Shopware 6 already installed manually
-- ~~shopware/platform is installed by composer~~ 👉 
+- ~~shopware/platform is installed by composer~~
 
 ## Features
 
