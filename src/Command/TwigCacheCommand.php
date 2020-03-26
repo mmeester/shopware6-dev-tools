@@ -8,6 +8,7 @@
 
 namespace DevTools\Command;
 
+use DevTools\Helper\DetectDirectory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -40,6 +41,14 @@ class TwigCacheCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+
+        $roots = DetectDirectory::detectInstallDirectory();
+
+        if($roots===false){
+            $output->write('<error>🚨🚨 Install directory not found 🚨🚨</error>', true);
+            return;
+        }
+
         $state = strtolower($input->getArgument('state'));
         if($state === 'enable' || $state === 'enabled') {
             $output->writeln([
@@ -62,12 +71,12 @@ class TwigCacheCommand extends Command
             return;
         }
 
-        $yaml = Yaml::parse(file_get_contents('vendor/shopware/platform/src/Core/Framework/Resources/config/packages/twig.yaml'));
+        $yaml = Yaml::parse(file_get_contents($roots['core'] . '/Framework/Resources/config/packages/twig.yaml'));
 
         $yaml['twig']['cache'] = $cache;
 
         $new_yaml = Yaml::dump($yaml);
-        file_put_contents('vendor/shopware/platform/src/Core/Framework/Resources/config/packages/twig.yaml', $new_yaml);
+        file_put_contents($roots['core'] . '/Framework/Resources/config/packages/twig.yaml', $new_yaml);
 
         $output->writeln([
             'Done...',

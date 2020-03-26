@@ -37,20 +37,26 @@ class HotProxyFixCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
 
-        var_dump ( DetectDirectory::detectInstallDirectory() );
-//        $output->writeln([
-//            '',
-//            'Copying fix to vendor folder',
-//            '============================',
-//            '',
-//        ]);
-//
-//        copy(dirname(__DIR__) . '/Resources/proxy-server-hot/index.js', 'vendor/shopware/platform/src/Storefront/Resources/app/storefront/build/proxy-server-hot/index.js');
-//
-//        $output->writeln([
-//            'Done...',
-//            '',
-//            'Run commands like you always do for development: <info>./psh.phar storefront:hot-proxy</info>'
-//        ]);
+        $roots = DetectDirectory::detectInstallDirectory();
+
+        if($roots===false){
+            $output->write('<error>🚨🚨 Install directory not found 🚨🚨</error>', true);
+            return;
+        }
+
+        $output->writeln([
+            '',
+            'Copying fix to vendor folder',
+            '============================',
+            '',
+        ]);
+
+        copy(dirname(__DIR__) . '/Resources/proxy-server-hot/index.js', $roots['storefront'] . '/Resources/app/storefront/build/proxy-server-hot/index.js');
+
+        $output->writeln([
+            'Done...',
+            '',
+            'Run commands like you always do for development: <info>./psh.phar storefront:hot-proxy</info>'
+        ]);
     }
 }
