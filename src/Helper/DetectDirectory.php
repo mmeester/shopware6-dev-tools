@@ -32,14 +32,13 @@ class DetectDirectory
                 'storefront' => './vendor/shopware/storefront'
             ];
             return ['storefront' => './vendor/shopware/storefront'];
-        } elseif (file_exists('./platform/src/storefront/composer.json')) {
-            // TODO: validate these assumptions
+        } elseif (file_exists('./platform/src/Storefront/composer.json')) {
             return [
-                'core' => './platform/src/core',
-                'administration' => './platform/src/administration',
-                'elasticsearch' => './platform/src/elasticsearch',
-                'recovery' => './platform/src/recovery',
-                'storefront' => './platform/src/storefront'
+                'core' => './platform/src/Core',
+                'administration' => './platform/src/Administration',
+                'elasticsearch' => './platform/src/Elasticsearch',
+                'recovery' => './platform/src/Recovery',
+                'storefront' => './platform/src/Storefront'
             ];
         } else {
             return false;
