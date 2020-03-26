@@ -8,6 +8,7 @@
 
 namespace DevTools\Command;
 
+use DevTools\Helper\DetectDirectory;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
@@ -35,6 +36,14 @@ class HotProxyFixCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+
+        $roots = DetectDirectory::detectInstallDirectory();
+
+        if($roots===false){
+            $output->write('<error>🚨🚨 Install directory not found 🚨🚨</error>', true);
+            return;
+        }
+
         $output->writeln([
             '',
             'Copying fix to vendor folder',
@@ -42,7 +51,7 @@ class HotProxyFixCommand extends Command
             '',
         ]);
 
-        copy(dirname(__DIR__) . '/Resources/proxy-server-hot/index.js', 'vendor/shopware/platform/src/Storefront/Resources/app/storefront/build/proxy-server-hot/index.js');
+        copy(dirname(__DIR__) . '/Resources/proxy-server-hot/index.js', $roots['storefront'] . '/Resources/app/storefront/build/proxy-server-hot/index.js');
 
         $output->writeln([
             'Done...',
